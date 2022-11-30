@@ -7,7 +7,11 @@ public class AgenciaModelo {
 	private double salario;
 	private String nomeAgencia;
 	private String grife;
+	private boolean disponibilidade = true;
+	private String empresa;
 	
+	
+
 	public AgenciaModelo() {
 		
 	}
@@ -21,7 +25,7 @@ public class AgenciaModelo {
 		setNomeAgencia(nomeAgencia);
 	    setGrife(grife);
 	}
-
+	
 	public Double getSalario() {
 		return salario;
 	}
@@ -51,6 +55,23 @@ public class AgenciaModelo {
 
 	public void setGrife(String grife) {
 		this.grife = grife;
+	}
+	
+	public boolean isDisponibilidade() {
+		return disponibilidade;
+	}
+
+	public void setDisponibilidade(boolean disponibilidade) {
+		this.disponibilidade = disponibilidade;
+	}
+	
+
+	public String getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
 	}
 
 	@Override

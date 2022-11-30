@@ -1,9 +1,9 @@
-package br.ucsal.bes.poo20222.modelo.domain;
+package br.ucsal.bes.poo20222.modelomasculino.domain;
 
 import br.ucsal.bes.poo20222.agenciamodelo.domain.AgenciaModelo;
 import br.ucsal.bes.poo20222.negocioexception.exception.NegocioException;
 
-public class Modelo extends AgenciaModelo {
+public class ModeloMasculino extends AgenciaModelo {
 	
 	private String nome;
 	private String nacionalidade;
@@ -12,7 +12,7 @@ public class Modelo extends AgenciaModelo {
 	private Double altura;
     private Double peso;
 	
-    public Modelo(double salario, String nomeAgencia, String grife, String nome, String nacionalidade, String biotipo, Integer idade,
+    public ModeloMasculino(double salario, String nomeAgencia, String grife, String nome, String nacionalidade, String biotipo, Integer idade,
 			Double altura, Double peso) throws NegocioException {
 		super(salario, nomeAgencia, grife);
 		this.nome = nome;
@@ -23,7 +23,7 @@ public class Modelo extends AgenciaModelo {
 		this.peso = peso;
 	}
     
-    public Modelo() {
+    public ModeloMasculino() {
     	
     }
   
@@ -49,14 +49,14 @@ public class Modelo extends AgenciaModelo {
 
 	private void setBiotipo() throws NegocioException {
 		
-		if(this.peso <= 50){
-			this.biotipo = "Modelo de corpo retangulo.";
-	        } else if(this.peso <= 70){
-	        	this.biotipo = "Modelo de corpo ampulheta.";
+		if(this.peso <= 70){
+			this.biotipo = "Modelo de corpo retangulo/ectomorfo.";
+	        } else if(this.peso <= 90){
+	        	this.biotipo = "Modelo de corpo ampulheta/mesomorfo.";
 	        }else if(this.peso <= 200){
-	        	this.biotipo = "Modelo de corpo oval/plus size.";
+	        	this.biotipo = "Modelo de corpo oval/endomorfo.";
 	        }else{
-	            throw new NegocioException("A(O) modelo inserida(o) não pode ter menos de 0kg ou mais de 200kg. É impossível ou totalmente fora do padrao.");   
+	            throw new NegocioException("O modelo inserido não pode ter menos de 0kg ou mais de 200kg. É impossível ou totalmente fora do padrao.");   
 	        }
 	}
 
@@ -84,5 +84,5 @@ public class Modelo extends AgenciaModelo {
 		this.peso = peso;
 		this.setBiotipo();
 	}
-    
+
 }

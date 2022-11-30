@@ -12,6 +12,8 @@ public class ModeloDAO {
 	public static void incluir(Modelo modelo) {
 		modelos.add(modelo);
 	}
+	
+	
 
 	
 }
